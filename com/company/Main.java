@@ -4,24 +4,34 @@ import com.company.Arrays.Array;
 import com.company.Stacks.BalancedExpression;
 import com.company.Stacks.StackWithArray;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+import java.util.Stack;
+
 public class Main {
 
     public static void main(String[] args) {
 	    // write your code here
 
-        StackWithArray stackWithArray = new StackWithArray(3);
-        stackWithArray.push(8);
-        stackWithArray.push(5);
-        stackWithArray.push(9);
-        stackWithArray.push(3);
-        System.out.println(stackWithArray.pop());
-        System.out.println(stackWithArray.pop());
-        System.out.println(stackWithArray.pop());
-        stackWithArray.push(1);
-        stackWithArray.push(7);
-        System.out.println(stackWithArray.empty());
-        System.out.println(stackWithArray.peek());
-        System.out.println(stackWithArray);
+        Queue<Integer> queue = new ArrayDeque<>();
+        queue.add(10);
+        queue.add(20);
+        queue.add(30);
 
+        System.out.println(queue);
+        reverse(queue);
+        System.out.println(queue);
+
+    }
+
+    public static void reverse(Queue<Integer> queue) {
+        Stack<Integer> stack = new Stack<>();
+        while (!queue.isEmpty()) {
+            stack.push(queue.remove());
+        }
+
+        while (!stack.empty()) {
+            queue.add(stack.pop());
+        }
     }
 }
