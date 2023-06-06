@@ -1,37 +1,21 @@
 package com.company;
 
-import com.company.Arrays.Array;
-import com.company.Stacks.BalancedExpression;
-import com.company.Stacks.StackWithArray;
-
-import java.util.ArrayDeque;
-import java.util.Queue;
-import java.util.Stack;
+import com.company.Queue.ArrayQueue;
 
 public class Main {
 
     public static void main(String[] args) {
 	    // write your code here
 
-        Queue<Integer> queue = new ArrayDeque<>();
-        queue.add(10);
-        queue.add(20);
-        queue.add(30);
-
+        ArrayQueue queue = new ArrayQueue(3);
+        System.out.println(queue.isFull());
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        queue.dequeue();
+        System.out.println(queue.isFull());
+        queue.enqueue(30);
+        System.out.println(queue.isFull());
         System.out.println(queue);
-        reverse(queue);
-        System.out.println(queue);
-
-    }
-
-    public static void reverse(Queue<Integer> queue) {
-        Stack<Integer> stack = new Stack<>();
-        while (!queue.isEmpty()) {
-            stack.push(queue.remove());
-        }
-
-        while (!stack.empty()) {
-            queue.add(stack.pop());
-        }
     }
 }
