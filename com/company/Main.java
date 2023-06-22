@@ -8,7 +8,7 @@ public class Main {
 	    // write your code here
 
         CharacterFinder characterFinder = new CharacterFinder();
-        char character = characterFinder.findFirstNonRepeatingCharacter("a green apple");
+        char character = characterFinder.findFirstRepeatedCharacter("greenr apple");
         System.out.println(character);
     }
 }
